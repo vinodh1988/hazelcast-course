@@ -11,7 +11,6 @@ import com.solution.entities.Person;
 import com.solution.repositories.PeopleRepository;
 
 @Service
-@CacheConfig(cacheNames = "messages")
 public class DataService {
 	
 	@Autowired
@@ -25,9 +24,14 @@ public class DataService {
 			"English is a language"
 	};
 	
-	@Cacheable()
+	@Cacheable("messages")
 	public String cachedCall(int messageid) {
 		return getData(messageid);
+	}
+	@Cacheable("people")
+	public Person getPerson(int sno) {
+		System.out.println("#####PROCESSSSING####");
+		return people.findBySno(sno);
 	}
 	
 	public List<Person> getPeople(){

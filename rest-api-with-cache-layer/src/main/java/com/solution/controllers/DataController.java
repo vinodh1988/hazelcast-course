@@ -24,4 +24,9 @@ public class DataController {
     public List<Person> getPeople(){
 	  return service.getPeople();
     }
+
+@RequestMapping("/people/{sno}")
+public Person getPeople(@PathVariable("sno") Integer sno){
+  return service.getPerson(sno);
+}
 }
