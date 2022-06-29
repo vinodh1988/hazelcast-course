@@ -12,6 +12,7 @@ public class HazelConfigNew {
 	@Bean
 	public Config hazelConfig() {
 		return new Config()
+				
 				.addMapConfig(
 						 new MapConfig()
 						 .setName("messages")
