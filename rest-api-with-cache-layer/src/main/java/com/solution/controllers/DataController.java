@@ -14,6 +14,6 @@ public class DataController {
   DataService service;
 @RequestMapping("/messages/{id}")
 	public String getMessage(@PathVariable("id") Integer id) {
-		return service.getData(id);
+		return service.cachedCall(id);
 	}
 }
